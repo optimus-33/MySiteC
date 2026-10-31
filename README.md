@@ -8,7 +8,7 @@ There is no framework, no build step and no external JavaScript. Fonts come from
 
 ```
 index.html            the whole page
-css/styles.css        palette (day + dusk), type, layout, motion
+CSS/styles.css        palette (day + dusk), type, layout, motion
 js/main.js            theme, nav, reveal, Web Audio keyboard, bonda, canvas field
 assets/favicon.svg    HAD monogram favicon
 assets/og.svg         source artwork for the social card
@@ -35,7 +35,7 @@ Then open <http://localhost:8000>. Any static server works (`npx serve`, VS Code
 3. Source: **Deploy from a branch**; branch: `main`; folder: `/ (root)`; save.
 4. Wait for the first build. The site appears at `https://<username>.github.io/<repo>/` (or `https://<username>.github.io/` for a user site).
 
-If you deploy under a project path (`/repo-name/`), all internal links are relative and keep working. Only the absolute URLs in the `<head>` need attention — see the placeholder list below. Netlify works too: drag the folder into Netlify Drop, or connect the repo with no build command and publish directory `.`.
+For this repository, the project site is `https://optimus-33.github.io/MySiteC/`. If you deploy under a different project path, update the absolute URLs in the `<head>` as well as any renamed asset URLs. Netlify works too: drag the folder into Netlify Drop, or connect the repo with no build command and publish directory `.`.
 
 ## Placeholders to replace
 
@@ -50,7 +50,7 @@ If you deploy under a project path (`/repo-name/`), all internal links are relat
   powershell -ExecutionPolicy Bypass -File tools/make-og.ps1
   ```
   Also update `og:image` / `twitter:image` if the file name changes.
-- **Absolute URLs.** `index.html` points `canonical`, `og:url`, `og:image` and `twitter:image` at `https://optimus-33.github.io/`. Change these to your real domain or repository path before sharing; social cards need absolute URLs.
+- **Absolute URLs.** `index.html` points `canonical`, `og:url`, `og:image` and `twitter:image` at this repository's GitHub Pages project site, `https://optimus-33.github.io/MySiteC/`. Change these if you use a custom domain or deploy under a different repository path; social cards need absolute URLs.
 - **Toolbox (optional).** The skill groups are deliberately plain lists, not exhaustive. Trim or add freely.
 
 The phone number is intentionally not published anywhere. Contact is email, LinkedIn and GitHub only.
