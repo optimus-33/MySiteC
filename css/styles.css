@@ -25,6 +25,7 @@
 
   --scene-hoodie: #3F6B4F;
   --scene-hoodie-dark: #2E5239;
+  --scene-hair: #30251F;
   --scene-skin: #C98B63;
   --scene-pants: #22302B;
   --scene-shoe: #1A2521;
@@ -62,6 +63,7 @@
 
   --scene-hoodie: #8FB89A;
   --scene-hoodie-dark: #6E9779;
+  --scene-hair: #30251F;
   --scene-skin: #D9A47C;
   --scene-pants: #7A8F84;
   --scene-shoe: #D8CBB5;
@@ -1766,4 +1768,3 @@ section[id] {
     margin-left: 0;
   }
 }
-
