@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hrishikesh Dehankar — software developer, farmer, music lover">
+  <rect width="1200" height="630" fill="#F6F1E7"/>
+
+  <defs>
+    <path id="og-row" d="M0 0 Q 100 -18 200 0 T 400 0 T 600 0 T 800 0 T 1000 0 T 1200 0"/>
+  </defs>
+
+  <g fill="none" stroke="#3F6B4F" stroke-width="1.3" opacity="0.32">
+    <use href="#og-row" y="84"/>
+    <use href="#og-row" y="112"/>
+    <use href="#og-row" y="140"/>
+    <use href="#og-row" y="168"/>
+    <use href="#og-row" y="196"/>
+    <use href="#og-row" y="224"/>
+    <use href="#og-row" y="252"/>
+  </g>
+
+  <circle cx="1052" cy="154" r="48" fill="#C4552D" opacity="0.9"/>
+  <circle cx="1052" cy="154" r="60" fill="none" stroke="#C4552D" stroke-width="1.4" opacity="0.55"/>
+
+  <g transform="translate(76 62) scale(1.05)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 19v26M21 19v26M9 32h12" stroke="#22302B" stroke-width="4.2"/>
+    <path d="M25.5 45 32 19l6.5 26M28.4 36.5h7.2" stroke="#A2421E" stroke-width="4.2"/>
+    <path d="M45.5 19v26h2.2c7 0 12.3-5.6 12.3-13S54.7 19 47.7 19h-2.2Z" stroke="#22302B" stroke-width="4.2"/>
+    <path d="M9 51h49" stroke="#C4552D" stroke-width="2"/>
+  </g>
+
+  <g fill="#3F6B4F" opacity="0.55">
+    <path d="M76 118h76M76 130h48"/>
+  </g>
+
+  <text x="76" y="382" fill="#22302B" font-family="Georgia, 'Times New Roman', serif" font-size="94" letter-spacing="-2">Hrishikesh Dehankar</text>
+  <text x="78" y="444" fill="#4A5852" font-family="'Segoe UI', Arial, sans-serif" font-size="29" letter-spacing="1.2">Software developer. Farmer. Music lover.</text>
+  <path d="M78 484h118" stroke="#C4552D" stroke-width="3" stroke-linecap="round"/>
+  <text x="78" y="548" fill="#4A5852" font-family="'Segoe UI', Arial, sans-serif" font-size="21" letter-spacing="2">OPTIMUS-33.GITHUB.IO</text>
+
+  <g fill="none" stroke="#3F6B4F" stroke-width="1.3" opacity="0.24">
+    <use href="#og-row" y="566"/>
+    <use href="#og-row" y="594"/>
+    <use href="#og-row" y="622"/>
+  </g>
+</svg>

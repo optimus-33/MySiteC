@@ -1,61 +1,422 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Hrishikesh Dehankar</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Merriweather:wght@300&family=Montserrat+Alternates:wght@300&family=Patrick+Hand&display=swap" rel="stylesheet">
-  </head>
-  <body>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hrishikesh Dehankar — software developer, farmer, music lover</title>
+  <meta name="description" content="The portfolio of Hrishikesh Dehankar, a software developer who farms and plays music. Backend systems, a small field, and the rows in between.">
+  <meta name="author" content="Hrishikesh Dehankar">
+  <meta name="color-scheme" content="light dark">
 
-    <div class="topContainer">
-      <img class="upFlash" src="images/flash-sup.png" alt="flash-favicon" height="100px" width="100px">
-      <h1>I'm Hrishikesh..!</h1>
-      <h2>A <span class="pro">Pro</span>grammer</h2>
-      <img id="im2" src="images/fla-wk.png" alt="flash-left" height="351px" width="351px">
-      <img class="bottomFlash" src="images/flash-sup.png" alt="flash-favicon" height="100px" width="100px">
-      <img src="images/lightening-giphy.gif" alt="lightening-bolt" height="350px" width="350px">
-      <img id="im3" src="images/fla-vj.png" alt="flash-right" height="351px" width="351px">
-    </div>
+  <!-- Set the theme before CSS paints, so there is no flash. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      var saved = null;
+      try { saved = localStorage.getItem('hd-theme'); } catch (error) { /* private mode */ }
+      var prefersDusk = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', saved === 'dusk' || (!saved && prefersDusk) ? 'dusk' : 'day');
+    })();
+  </script>
 
-    <div class="middleContainer">
-      <div class="profile">
-        <img src="images/hello-giphy.gif" alt="fla-me" height="150px" width="150px">
-        <h2>Hello.</h2>
-        <p class="intro">I am an engineering graduate in the discipline of Information Technology. I always had a thing for challenges especially the ones whose solutions cannot be found over the internet.</p>
+  <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16211D" media="(prefers-color-scheme: dark)">
+
+  <!-- TODO: update the absolute URL if you deploy to a project path instead of a user site. -->
+  <link rel="canonical" href="https://optimus-33.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hrishikesh Dehankar">
+  <meta property="og:title" content="Hrishikesh Dehankar — software developer, farmer, music lover">
+  <meta property="og:description" content="Backend systems, a small field, and the rows in between. A quiet portfolio in parallel rows.">
+  <meta property="og:url" content="https://optimus-33.github.io/">
+  <meta property="og:image" content="https://optimus-33.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hrishikesh Dehankar, with fine rows of lines curving behind his name.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hrishikesh Dehankar — software developer, farmer, music lover">
+  <meta name="twitter:description" content="Backend systems, a small field, and the rows in between.">
+  <meta name="twitter:image" content="https://optimus-33.github.io/assets/og.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reusable bits of hand-drawn art. -->
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8.5 7H17v8.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="bonda-shape" viewBox="0 0 64 64">
+      <path d="M32 6.5c9.4 0 15.8 5.3 19.6 12 3.4 6 3.4 12.8-.4 18.4-3.8 5.6-10.2 9.4-19.2 9.4s-15.4-3.8-19.2-9.4C9 31.3 9 24.5 12.4 18.5 16.2 11.8 22.6 6.5 32 6.5Z" fill="#C98B4B" stroke="#9A5E28" stroke-width="1.8"/>
+      <path d="M18.5 24.5c2.6-7 8-11.4 14.5-12.2" fill="none" stroke="#EDC58E" stroke-width="3.2" stroke-linecap="round" opacity=".75"/>
+      <circle cx="25.5" cy="37" r="1.7" fill="#7A4A1E" opacity=".5"/>
+      <circle cx="37" cy="29.5" r="1.2" fill="#7A4A1E" opacity=".45"/>
+      <circle cx="40" cy="41" r="1.8" fill="#7A4A1E" opacity=".5"/>
+      <circle cx="30" cy="46" r="1" fill="#7A4A1E" opacity=".4"/>
+    </symbol>
+  </svg>
+
+  <canvas class="line-field" id="line-field" aria-hidden="true" role="presentation"></canvas>
+  <header class="site-header" data-header>
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top" aria-label="Hrishikesh Dehankar — back to the top">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M9 19v26M21 19v26M9 32h12" fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round"/>
+          <path d="M25.5 45 32 19l6.5 26M28.4 36.5h7.2" fill="none" stroke="var(--accent-text)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M45.5 19v26h2.2c7 0 12.3-5.6 12.3-13S54.7 19 47.7 19h-2.2Z" fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 51h49" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+        </svg>
+        <span class="brand__name">Hrishikesh Dehankar</span>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Sections">
+        <ul class="site-nav__list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#toolbox">Toolbox</a></li>
+          <li><a href="#play">Play</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="icon-button" type="button" data-theme-toggle="icon" aria-label="Switch to dusk theme">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 2.8v2.1M12 19.1v2.1M2.8 12h2.1M19.1 12h2.1M5.5 5.5l1.5 1.5M17 17l1.5 1.5M18.5 5.5 17 7M7 17l-1.5 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20 14.6A8.6 8.6 0 0 1 9.4 4a8.6 8.6 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-button" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+          <span class="nav-button__label">Menu</span>
+          <span class="nav-button__bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
       </div>
-      <hr>
-      <div class="skills">
-        <h2>My Skills.</h2>
-        <div class="skill-row">
-          <img class="des-dev" src="images/des-dev.png" alt="designer-developer">
-          <h3>Design and Development</h3>
-          <p>I started learning to code when I was 15 and had passion for making my own video game. I love designing web applications..! Time passed-by and I started mastering the skills one-by-one.</p>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" data-row-mode="0" aria-labelledby="hero-title">
+      <div class="wrap hero__inner">
+        <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>A portfolio in parallel rows</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__first">Hrishikesh</span>
+          <span class="hero__last">Dehankar</span>
+        </h1>
+        <p class="hero__identity">Software developer. Farmer. Music lover.</p>
+        <a class="scroll-cue" href="#about">
+          <span class="scroll-cue__track" aria-hidden="true"><span class="scroll-cue__dot"></span></span>
+          <span>Scroll — the rows shift</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="about" data-row-mode="0.3" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div class="about__text">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>01 — About</p>
+          <h2 id="about-title">A short introduction</h2>
+          <div class="prose">
+            <p>I'm Hrishikesh. I began coding at 15 because I wanted to build my own video game; the game never quite arrived, but the habit did.</p>
+            <p>I graduated in information technology, and I still like problems whose answers aren't easy to find online. These days I farm a small plot and listen to a lot of music — often both at once.</p>
+          </div>
         </div>
-        <div class="skill-row">
-          <img class="aloo-bond" src="images/aloo-bonda.png" alt="aloo-bond">
-          <h3>Aloo-Bonda Eating Challenge</h3>
-          <p>But my best skill is eating Aloo Bondas'. Like lots of them in a single go with chutney and grilled green chillies &#x1F60B;.</p>
+        <figure class="about__figure">
+          <!-- TODO (photo): swap this drawing for
+               <img class="about__photo" src="assets/portrait.jpg" alt="Hrishikesh standing between rows on his farm" width="720" height="900">
+               when you have a photo you like. -->
+          <svg class="plant" viewBox="0 0 320 400" role="img" aria-labelledby="plant-title plant-desc">
+            <title id="plant-title">A small plant growing between furrows</title>
+            <desc id="plant-desc">A hand-drawn seedling in a field, with a low sun and rows of soil.</desc>
+            <g fill="none" stroke="var(--rule-strong)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M18 330c48-9 92 7 142-1s91-12 142 0"/>
+              <path d="M12 348c50-8 96 8 148 0s94-11 148 1"/>
+              <path d="M20 366c46-7 90 7 140 0s92-10 144 1"/>
+              <path d="M28 383c42-6 84 6 132 0s86-9 132 1"/>
+            </g>
+            <circle cx="246" cy="74" r="20" fill="var(--accent)" opacity=".16"/>
+            <circle cx="246" cy="74" r="20" fill="none" stroke="var(--accent)" stroke-width="1.4" opacity=".8"/>
+            <path d="M158 344c-5-38 4-66 0-98 4-38-3-66 1-96" fill="none" stroke="var(--leaf)" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M159 272c-24-2-43-16-48-40 25-3 44 12 48 40Z" fill="var(--leaf)" opacity=".9"/>
+            <path d="M160 246c23-3 41-17 45-40-24-2-42 12-45 40Z" fill="var(--leaf)" opacity=".7"/>
+            <path d="M159 204c-17-2-30-12-34-29 18-2 31 9 34 29Z" fill="var(--leaf)" opacity=".8"/>
+            <path d="M160 182c16-2 28-12 31-28-16-2-28 9-31 28Z" fill="var(--accent)" opacity=".85"/>
+            <path d="M151 338c8 4 16 4 24 0" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" opacity=".45"/>
+            <g fill="var(--accent-text)">
+              <ellipse cx="215" cy="128" rx="5.2" ry="3.8" transform="rotate(-24 215 128)"/>
+              <path d="M220 127V99" fill="none" stroke="var(--accent-text)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M220 99c7 2 9 6 8 11-4-1-7-4-8-11Z"/>
+            </g>
+            <g fill="none" stroke="var(--rule-strong)" stroke-width="1">
+              <path d="M30 132h72M30 146h44M30 160h58"/>
+            </g>
+          </svg>
+          <figcaption>Field notes, roughly to scale.</figcaption>
+        </figure>
+
+      </div>
+    </section>
+    <section class="section" id="work" data-row-mode="1" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>02 — Work</p>
+          <h2 id="work-title">Work, <em>one row</em> at a time</h2>
+          <p class="section__lede">Three stops, newest first. Open a row for the detail.</p>
+        </header>
+
+        <div class="timeline" data-timeline>
+          <span class="timeline__rail" aria-hidden="true"><span class="timeline__rail-fill"></span></span>
+          <ol class="timeline__list">
+            <li class="job" data-reveal>
+              <details>
+                <summary class="job__summary">
+                  <span class="job__meta">
+                    <span class="job__years">2024 — 2026</span>
+                    <span class="job__org">Fractal Analytics</span>
+                  </span>
+                  <span class="job__line">Built an enterprise LLM gateway that gives teams one entry point to several model providers, with usage tracking and cost governance, and designed the backend of an enterprise AI catalog.</span>
+                  <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__more">
+                  <p>The gateway runs on Kubernetes and sits in front of several model providers. It handles millions of daily requests, with routing overhead under 20 ms at p95, and keeps per-team usage and cost visible to the people paying for it.</p>
+                  <p>The catalog's backend indexes internal models and datasets, so teams can see what already exists before building it again. The client is a large U.S. healthcare enterprise, which is as specific as I can get.</p>
+                  <ul class="job__stack" aria-label="Tools used">
+                    <li>Python</li><li>FastAPI</li><li>Kubernetes</li><li>Azure</li><li>PostgreSQL</li><li>Redis</li><li>OpenTelemetry</li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+            <li class="job" data-reveal>
+              <details>
+                <summary class="job__summary">
+                  <span class="job__meta">
+                    <span class="job__years">2023 — 2024</span>
+                    <span class="job__org">Avananta Innovations</span>
+                  </span>
+                  <span class="job__line">Built conversational AI systems at an early-stage startup and spent a lot of time on how quickly they responded.</span>
+                  <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__more">
+                  <p>Worked on dialogue flows, backend services, and the unglamorous parts of making a demo hold up in production. Performance work made responses 15% faster.</p>
+                  <p>The team was small, so the work moved between design, code and deployment, usually in the same week.</p>
+                  <ul class="job__stack" aria-label="Tools used">
+                    <li>Python</li><li>FastAPI</li><li>Redis</li><li>Docker</li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+
+            <li class="job" data-reveal>
+              <details>
+                <summary class="job__summary">
+                  <span class="job__meta">
+                    <span class="job__years">2021 — 2022</span>
+                    <span class="job__org">Varal Consultancy</span>
+                  </span>
+                  <span class="job__line">Wrote Python and Django services, and led a small team through delivery.</span>
+                  <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__more">
+                  <p>Built backend services and APIs, reviewed code, and kept a small team moving. A lot of the work was schema changes, data fixes and making deployments uneventful, which is the point.</p>
+                  <ul class="job__stack" aria-label="Tools used">
+                    <li>Python</li><li>Django</li><li>PostgreSQL</li><li>Docker</li><li>Git</li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ol>
         </div>
       </div>
-      <hr>
-      <div>
-        <h2>Get In Touch</h2>
-        <h3>If you love Aloo Bondas as much as I do.</h3>
-        <p class="contact-me">Let's talk about how appetizing they are! We can code too while eating Aloo-Bondas'!</p>
-        <a class="btn" href="mailto:c8hrish.dehankar@gmail.com">CONTACT ME</a>
+    </section>
+    <section class="section" id="toolbox" data-row-mode="1.1" aria-labelledby="toolbox-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>03 — Toolbox</p>
+          <h2 id="toolbox-title">What I <em>reach for</em></h2>
+          <p class="section__lede">Things I've shipped with. No bars, no percentages.</p>
+        </header>
+
+        <div class="toolbox">
+          <div class="toolbox__group" data-reveal>
+            <h3>Code</h3>
+            <ul class="taglist">
+              <li>Python</li><li>FastAPI</li><li>Django</li><li>JavaScript</li><li>SQL</li>
+            </ul>
+          </div>
+          <div class="toolbox__group" data-reveal>
+            <h3>Run</h3>
+            <ul class="taglist">
+              <li>Kubernetes</li><li>Docker</li><li>Terraform</li><li>Azure</li><li>AWS</li><li>Linux</li>
+            </ul>
+          </div>
+          <div class="toolbox__group" data-reveal>
+            <h3>Data</h3>
+            <ul class="taglist">
+              <li>PostgreSQL</li><li>Redis</li>
+            </ul>
+          </div>
+          <div class="toolbox__group" data-reveal>
+            <h3>AI</h3>
+            <ul class="taglist">
+              <li>LLM gateways</li><li>RAG</li><li>Evaluation</li><li>Cost controls</li>
+            </ul>
+          </div>
+          <div class="toolbox__group" data-reveal>
+            <h3>Watch</h3>
+            <ul class="taglist">
+              <li>OpenTelemetry</li><li>Grafana</li><li>Git</li><li>CI/CD</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <section class="section" id="play" data-row-mode="2" aria-labelledby="play-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>04 — Play</p>
+          <h2 id="play-title">Play <em>corner</em></h2>
+          <p class="section__lede">Small, optional things. Sound stays off until you ask for it.</p>
+        </header>
 
-    <div class="bottomContainer">
-      <img src="images/fla-wi.png" alt="flash-bye"><br>
-      <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
-      <a class="footer-link" href="https://twitter.com/">Twitter</a>
-      <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
-      <p class="copyright">© 2021 Hrishikesh Dehankar.</p>
-    </div>
+        <div class="play-grid">
+          <article class="card card--keys" data-reveal aria-labelledby="keys-title">
+            <div class="card__head">
+              <h3 id="keys-title">A small keyboard</h3>
+              <button class="toggle" type="button" data-sound-toggle aria-pressed="false">
+                <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                <span data-sound-label>Sound off</span>
+              </button>
+            </div>
+            <p class="card__note">Seven keys, one octave. Press A S D F G H J, or tap the keys.</p>
+            <div class="keys" role="group" aria-label="Playable notes">
+              <button class="key" type="button" data-note="261.63" data-hotkey="a" aria-label="Play C, key A"><span class="key__letter">A</span><span class="key__note">C</span></button>
+              <button class="key" type="button" data-note="293.66" data-hotkey="s" aria-label="Play D, key S"><span class="key__letter">S</span><span class="key__note">D</span></button>
+              <button class="key" type="button" data-note="329.63" data-hotkey="d" aria-label="Play E, key D"><span class="key__letter">D</span><span class="key__note">E</span></button>
+              <button class="key" type="button" data-note="349.23" data-hotkey="f" aria-label="Play F, key F"><span class="key__letter">F</span><span class="key__note">F</span></button>
+              <button class="key" type="button" data-note="392.00" data-hotkey="g" aria-label="Play G, key G"><span class="key__letter">G</span><span class="key__note">G</span></button>
+              <button class="key" type="button" data-note="440.00" data-hotkey="h" aria-label="Play A, key H"><span class="key__letter">H</span><span class="key__note">A</span></button>
+              <button class="key" type="button" data-note="493.88" data-hotkey="j" aria-label="Play B, key J"><span class="key__letter">J</span><span class="key__note">B</span></button>
+            </div>
+            <p class="card__hint" data-audio-hint>Sound is off. Turn it on when you want to hear it.</p>
+            <svg class="wave" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <defs>
+                <path id="wave-row" d="M0 32C40 32 40 12 80 12S120 52 160 52 240 12 280 12 360 32 400 32"/>
+              </defs>
+              <g fill="none" stroke="currentColor" stroke-width="1">
+                <use href="#wave-row"/>
+                <use href="#wave-row" y="5"/>
+                <use href="#wave-row" y="10"/>
+                <use href="#wave-row" y="15"/>
+                <use href="#wave-row" y="20"/>
+              </g>
+            </svg>
+          </article>
+          <article class="card card--theme" data-reveal aria-labelledby="theme-title">
+            <h3 id="theme-title">Day or dusk</h3>
+            <p class="card__note">The same hues, after sunset.</p>
+            <svg class="theme-art" viewBox="0 0 220 84" aria-hidden="true" focusable="false">
+              <circle class="theme-art__sun" cx="58" cy="30" r="15" fill="var(--accent)" opacity=".85"/>
+              <path class="theme-art__moon" d="M162 11a18 18 0 1 0 15 29 21 21 0 0 1-15-29Z" fill="var(--accent)" opacity=".9"/>
+              <g fill="none" stroke="var(--rule-strong)" stroke-width="1">
+                <path d="M10 64c34-5 66 4 100 0s70-5 100 1"/>
+                <path d="M10 72c34-4 66 3 100 0s70-4 100 1"/>
+                <path d="M10 80c34-4 66 3 100 0s70-4 100 1"/>
+              </g>
+            </svg>
+            <button class="toggle toggle--wide" type="button" data-theme-toggle="switch" aria-pressed="false">
+              <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+              <span>Dusk theme</span>
+            </button>
+          </article>
 
-  </body>
+          <article class="card card--bonda" data-reveal aria-labelledby="bonda-title">
+            <h3 id="bonda-title">A plate of aloo bonda</h3>
+            <p class="card__note">A leftover joke from the old site. Click one; it won't fight back.</p>
+            <div class="plate">
+              <svg class="plate__dish" viewBox="0 0 260 180" aria-hidden="true" focusable="false">
+                <ellipse cx="130" cy="102" rx="106" ry="63" fill="var(--plate)" stroke="var(--rule-strong)"/>
+                <ellipse cx="130" cy="98" rx="84" ry="47" fill="var(--plate-inner)" stroke="var(--rule)"/>
+                <ellipse cx="130" cy="94" rx="61" ry="32" fill="none" stroke="var(--rule)"/>
+                <ellipse cx="203" cy="124" rx="20" ry="11" fill="#4C6B3B" opacity=".9"/>
+                <ellipse cx="203" cy="120" rx="20" ry="11" fill="#5C7F47"/>
+                <circle cx="198" cy="119" r="2" fill="#E8DFC9" opacity=".6"/>
+              </svg>
+              <button class="bonda bonda--1" type="button" data-bonda aria-label="Eat an aloo bonda">
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#bonda-shape"></use></svg>
+              </button>
+              <button class="bonda bonda--2" type="button" data-bonda aria-label="Eat an aloo bonda">
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#bonda-shape"></use></svg>
+              </button>
+              <button class="bonda bonda--3" type="button" data-bonda aria-label="Eat an aloo bonda">
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#bonda-shape"></use></svg>
+              </button>
+              <button class="bonda bonda--4" type="button" data-bonda aria-label="Eat an aloo bonda">
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#bonda-shape"></use></svg>
+              </button>
+              <button class="bonda bonda--5" type="button" data-bonda aria-label="Eat an aloo bonda">
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#bonda-shape"></use></svg>
+              </button>
+            </div>
+            <p class="bonda__msg" data-bonda-msg aria-live="polite">Five bondas. All accounted for.</p>
+            <button class="bonda__restock" type="button" data-bonda-restock hidden>Restock the plate</button>
+            <noscript><p class="card__hint">The plate needs JavaScript. It is, admittedly, a small loss.</p></noscript>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <section class="section section--contact" id="contact" data-row-mode="0.2" aria-labelledby="contact-title">
+      <div class="wrap contact">
+        <div class="contact__intro">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>05 — Contact</p>
+          <h2 id="contact-title">Say <em>hello</em>.</h2>
+          <p class="contact__lede">Email is best. I read all of it. LinkedIn works too.</p>
+        </div>
+
+        <ul class="contact__links">
+          <li>
+            <a href="mailto:c8hrish.dehankar@gmail.com">
+              <span class="contact__service">Email</span>
+              <span class="contact__handle">c8hrish.dehankar@gmail.com</span>
+              <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/hrishikesh-d3" target="_blank" rel="noopener noreferrer me">
+              <span class="contact__service">LinkedIn</span>
+              <span class="contact__handle">in/hrishikesh-d3</span>
+              <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/optimus-33" target="_blank" rel="noopener noreferrer me">
+              <span class="contact__service">GitHub</span>
+              <span class="contact__handle">github.com/optimus-33</span>
+              <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>© <span data-year>2026</span> Hrishikesh Dehankar</p>
+      <p class="site-footer__sign">Grown, written and mixed in rows.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
 </html>
