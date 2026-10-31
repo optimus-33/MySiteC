@@ -89,7 +89,7 @@
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 800) setNav(false);
+      if (window.innerWidth > 864) setNav(false);
     });
   }
 
@@ -132,10 +132,13 @@
      Play corner: a small opt-in keyboard (Web Audio, no samples)
      ------------------------------------------------------------------------ */
 
-  const soundToggle = document.querySelector('[data-sound-toggle]');
-  const soundLabel = soundToggle ? soundToggle.querySelector('[data-sound-label]') : null;
+  const soundToggles = Array.from(document.querySelectorAll('[data-sound-toggle]'));
+  const soundLabels = Array.from(document.querySelectorAll('[data-sound-label]'));
+  const soundHints = Array.from(document.querySelectorAll('[data-sound-hint]'));
+  const sarodHint = document.querySelector('[data-sound-hint]');
   const audioHint = document.querySelector('[data-audio-hint]');
   const pianoKeys = Array.from(document.querySelectorAll('[data-note]'));
+  const sarodStrings = Array.from(document.querySelectorAll('[data-string-note]'));
   const AudioContextClass = window.AudioContext || window.webkitAudioContext;
 
   let audioContext = null;
@@ -152,7 +155,7 @@
 
       const softener = audioContext.createBiquadFilter();
       softener.type = 'lowpass';
-      softener.frequency.value = 2600;
+      softener.frequency.value = 3600;
 
       masterGain.connect(softener);
       softener.connect(audioContext.destination);
@@ -198,19 +201,69 @@
     overtone.stop(now + 1.6);
   }
 
+  function playPluck(frequency) {
+    const context = ensureAudio();
+    if (!context || !masterGain) return;
+
+    const now = context.currentTime;
+    const output = context.createGain();
+    output.gain.setValueAtTime(0.0001, now);
+    output.gain.exponentialRampToValueAtTime(0.4, now + 0.006);
+    output.gain.exponentialRampToValueAtTime(0.0001, now + 1.9);
+
+    const filter = context.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(4800, now);
+    filter.frequency.exponentialRampToValueAtTime(900, now + 0.8);
+    filter.Q.value = 0.7;
+
+    const string = context.createOscillator();
+    string.type = 'sawtooth';
+    string.frequency.setValueAtTime(frequency, now);
+
+    const body = context.createOscillator();
+    body.type = 'triangle';
+    body.frequency.setValueAtTime(frequency * 1.004, now);
+    body.detune.setValueAtTime(5, now);
+
+    const stringGain = context.createGain();
+    stringGain.gain.value = 0.5;
+
+    const bodyGain = context.createGain();
+    bodyGain.gain.value = 0.7;
+
+    string.connect(stringGain);
+    body.connect(bodyGain);
+    stringGain.connect(output);
+    bodyGain.connect(output);
+    output.connect(filter);
+    filter.connect(masterGain);
+
+    string.start(now);
+    body.start(now);
+    string.stop(now + 2);
+    body.stop(now + 2);
+  }
+
   function setSound(on, withGreeting) {
     soundOn = Boolean(on);
 
-    if (soundToggle) {
-      soundToggle.setAttribute('aria-pressed', String(soundOn));
-    }
-    if (soundLabel) {
-      soundLabel.textContent = soundOn ? 'Sound on' : 'Sound off';
-    }
+    soundToggles.forEach((toggle) => {
+      toggle.setAttribute('aria-pressed', String(soundOn));
+    });
+
+    soundLabels.forEach((label) => {
+      label.textContent = soundOn ? 'Sound on' : 'Sound off';
+    });
+
+    soundHints.forEach((hint) => {
+      const copy = hint.getAttribute(soundOn ? 'data-on' : 'data-off');
+      if (copy) hint.textContent = copy;
+    });
+
     if (audioHint) {
-      audioHint.textContent = soundOn
-        ? 'Sound is on. Press A S D F G H J, or tap the keys.'
-        : 'Sound is off. Turn it on when you want to hear it.';
+      const copy = audioHint.getAttribute(soundOn ? 'data-on' : 'data-off');
+      if (copy) audioHint.textContent = copy;
     }
 
     if (soundOn && withGreeting !== false && AudioContextClass) {
@@ -219,13 +272,20 @@
   }
 
   if (!AudioContextClass) {
-    if (soundToggle) soundToggle.disabled = true;
+    soundToggles.forEach((toggle) => {
+      toggle.disabled = true;
+    });
+    soundHints.forEach((hint) => {
+      hint.textContent = 'This browser has no Web Audio, so the sounds stay a drawing.';
+    });
     if (audioHint) audioHint.textContent = 'This browser has no Web Audio, so the keyboard stays a drawing.';
   }
 
-  if (soundToggle && AudioContextClass) {
-    soundToggle.addEventListener('click', () => {
-      setSound(!soundOn);
+  if (AudioContextClass) {
+    soundToggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        setSound(!soundOn);
+      });
     });
   }
 
@@ -251,6 +311,35 @@
     const hotkey = key.getAttribute('data-hotkey');
     if (hotkey) keyByHotkey[hotkey] = key;
     key.addEventListener('click', () => strikeKey(key));
+  });
+
+  function pluckString(string) {
+    const frequency = parseFloat(string.getAttribute('data-string-note'));
+
+    if (soundOn) {
+      playPluck(frequency);
+    } else if (sarodHint) {
+      sarodHint.textContent = 'Sound is off — turn it on above to hear the strings.';
+    }
+
+    string.classList.remove('is-plucked');
+    void string.getBoundingClientRect();
+    string.classList.add('is-plucked');
+
+    window.clearTimeout(string.releaseTimer);
+    string.releaseTimer = window.setTimeout(() => {
+      string.classList.remove('is-plucked');
+    }, 380);
+  }
+
+  sarodStrings.forEach((string) => {
+    string.addEventListener('click', () => pluckString(string));
+    string.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        pluckString(string);
+      }
+    });
   });
 
   document.addEventListener('keydown', (event) => {
@@ -340,6 +429,33 @@
       if (bondaMessage) bondaMessage.textContent = 'Five bondas. All accounted for.';
       bondaRestock.hidden = true;
       if (bondaButtons[0]) bondaButtons[0].focus();
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     Field scene: send a breeze through the crops
+     ------------------------------------------------------------------------ */
+
+  const scene = document.querySelector('[data-scene]');
+  const breezeButton = document.querySelector('[data-breeze]');
+  const breezeLabel = document.querySelector('[data-breeze-label]');
+  let breezeTimer = 0;
+
+  if (scene && breezeButton) {
+    breezeButton.addEventListener('click', () => {
+      if (!motionAllowed()) return;
+
+      scene.classList.remove('is-breezy');
+      void scene.offsetWidth;
+      scene.classList.add('is-breezy');
+
+      if (breezeLabel) breezeLabel.textContent = 'Breeze sent';
+
+      window.clearTimeout(breezeTimer);
+      breezeTimer = window.setTimeout(() => {
+        scene.classList.remove('is-breezy');
+        if (breezeLabel) breezeLabel.textContent = 'Send a breeze';
+      }, 3400);
     });
   }
 
@@ -577,31 +693,30 @@
           ctx.lineTo(x, y);
         }
       }
-      ctx.strokeStyle = rgba(lineColor, 0.32 * weight);
+      ctx.strokeStyle = rgba(lineColor, 0.24 * weight);
       ctx.stroke();
     }
 
+    /* Notes live in the wide margins only, so they never sit behind copy. */
+    if (width < 1280) return;
+
     const notes = [
-      { x: 0.22, step: -1, up: true },
-      { x: 0.34, step: 2, up: false },
-      { x: 0.47, step: 0, up: true },
-      { x: 0.59, step: -2, up: true },
-      { x: 0.72, step: 1, up: false },
-      { x: 0.84, step: 3, up: false }
+      { x: 0.045, step: -1, up: true },
+      { x: 0.955, step: 2, up: false }
     ];
 
     notes.forEach((note, index) => {
-      const drift = Math.sin(phase * 0.32 + index * 1.3) * 12;
+      const drift = Math.sin(phase * 0.32 + index * 1.3) * 8;
       const x = note.x * width + drift;
       const y = centerY + note.step * (gap / 2) + bend(x);
-      const color = index === 2 ? palette.accent : lineColor;
+      const color = index === 0 ? palette.accent : lineColor;
 
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(-0.32);
       ctx.beginPath();
       ctx.ellipse(0, 0, 6.2, 4.2, 0, 0, Math.PI * 2);
-      ctx.fillStyle = rgba(color, 0.6 * weight);
+      ctx.fillStyle = rgba(color, 0.4 * weight);
       ctx.fill();
       ctx.restore();
 
@@ -610,7 +725,7 @@
       ctx.beginPath();
       ctx.moveTo(stemX, y);
       ctx.lineTo(stemX, stemEnd);
-      ctx.strokeStyle = rgba(color, 0.5 * weight);
+      ctx.strokeStyle = rgba(color, 0.35 * weight);
       ctx.lineWidth = 1;
       ctx.stroke();
     });

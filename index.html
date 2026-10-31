@@ -37,12 +37,13 @@
   <meta name="twitter:title" content="Hrishikesh Dehankar — software developer, farmer, music lover">
   <meta name="twitter:description" content="Backend systems, a small field, and the rows in between.">
   <meta name="twitter:image" content="https://optimus-33.github.io/MySiteC/assets/og.png">
+  <meta name="twitter:image:alt" content="Hrishikesh Dehankar, with fine rows of lines curving behind his name.">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300..600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -79,7 +80,9 @@
         <ul class="site-nav__list">
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
+          <li><a href="#field">Field</a></li>
           <li><a href="#toolbox">Toolbox</a></li>
+          <li><a href="#sound">Sound</a></li>
           <li><a href="#play">Play</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -111,6 +114,7 @@
           <span class="hero__last">Dehankar</span>
         </h1>
         <p class="hero__identity">Software developer. Farmer. Music lover.</p>
+        <p class="hero__note">Enterprise AI by day. A field at dusk. Sarod after that.</p>
         <a class="scroll-cue" href="#about">
           <span class="scroll-cue__track" aria-hidden="true"><span class="scroll-cue__dot"></span></span>
           <span>Scroll — the rows shift</span>
@@ -125,7 +129,7 @@
           <h2 id="about-title">A short introduction</h2>
           <div class="prose">
             <p>I'm Hrishikesh. I began coding at 15 because I wanted to build my own video game; the game never quite arrived, but the habit did.</p>
-            <p>I graduated in information technology, and I still like problems whose answers aren't easy to find online. These days I farm a small plot and listen to a lot of music — often both at once.</p>
+            <p>I graduated in information technology and now build AI systems used at enterprise scale, and I still like problems whose answers aren't easy to find online. Away from a screen I farm a small plot and play the sarod, neither of which has a deploy button.</p>
           </div>
         </div>
         <figure class="about__figure">
@@ -168,7 +172,7 @@
         <header class="section__head">
           <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>02 — Work</p>
           <h2 id="work-title">Work, <em>one row</em> at a time</h2>
-          <p class="section__lede">Three stops, newest first. Open a row for the detail.</p>
+          <p class="section__lede">Three stops, newest first. A number of these systems are in production at companies near the top of the Fortune 500; the names stay off the page.</p>
         </header>
 
         <div class="timeline" data-timeline>
@@ -187,6 +191,7 @@
                 <div class="job__more">
                   <p>The gateway runs on Kubernetes and sits in front of several model providers. It handles millions of daily requests, with routing overhead under 20 ms at p95, and keeps per-team usage and cost visible to the people paying for it.</p>
                   <p>The catalog's backend indexes internal models and datasets, so teams can see what already exists before building it again. The client is a large U.S. healthcare enterprise, which is as specific as I can get.</p>
+                  <p>Several projects I worked on are in production at some of the largest Fortune 500 companies, including a few in the top five. That is the part I'm quietly proud of, and the reason the names stay out of this page.</p>
                   <ul class="job__stack" aria-label="Tools used">
                     <li>Python</li><li>FastAPI</li><li>Kubernetes</li><li>Azure</li><li>PostgreSQL</li><li>Redis</li><li>OpenTelemetry</li>
                   </ul>
@@ -200,14 +205,14 @@
                     <span class="job__years">2023 — 2024</span>
                     <span class="job__org">Avananta Innovations</span>
                   </span>
-                  <span class="job__line">Built conversational AI systems at an early-stage startup and spent a lot of time on how quickly they responded.</span>
+                  <span class="job__line">Built NLP-heavy conversational AI systems at an early-stage startup and spent a lot of time on how quickly they responded.</span>
                   <span class="job__toggle" aria-hidden="true"></span>
                 </summary>
                 <div class="job__more">
-                  <p>Worked on dialogue flows, backend services, and the unglamorous parts of making a demo hold up in production. Performance work made responses 15% faster.</p>
-                  <p>The team was small, so the work moved between design, code and deployment, usually in the same week.</p>
+                  <p>Most of the work was NLP: intent classification, entity extraction, dialogue state, and the evaluation harnesses that kept them honest. Performance work made responses 15% faster.</p>
+                  <p>The team was small, so the work moved between design, code, deployment and the unglamorous parts of making a demo hold up in production.</p>
                   <ul class="job__stack" aria-label="Tools used">
-                    <li>Python</li><li>FastAPI</li><li>Redis</li><li>Docker</li>
+                    <li>Python</li><li>FastAPI</li><li>NLP</li><li>Redis</li><li>Docker</li>
                   </ul>
                 </div>
               </details>
@@ -235,10 +240,176 @@
         </div>
       </div>
     </section>
+    <section class="section section--field" id="field" data-row-mode="0.1" aria-labelledby="field-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>03 — Field</p>
+          <h2 id="field-title">The other <em>office</em></h2>
+          <p class="section__lede">The farm is small. I sit between rows with a laptop, which is either multitasking or avoiding one of the two jobs. Both have the same rule: pay attention, then wait.</p>
+        </header>
+
+        <figure class="scene" data-scene>
+          <div class="scene__frame">
+            <svg class="scene__art" viewBox="0 0 1000 520" role="img" aria-labelledby="scene-title scene-desc">
+              <title id="scene-title">A hooded figure sitting in a field with a laptop</title>
+              <desc id="scene-desc">Hand-drawn furrows lead to a low sun. A person in a hoodie sits cross-legged with a laptop, a cup of chai and a small plant, framed by tall crops.</desc>
+
+              <defs>
+                <g id="scene-stalk">
+                  <path d="M30 0C27-54 34-104 30-158" fill="none" stroke="var(--leaf)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M30-70C14-80 6-96 4-116c16-1 25 16 26 46Z" fill="var(--leaf)" opacity=".75"/>
+                  <path d="M30-98c14-9 21-24 21-42-15 0-22 15-21 42Z" fill="var(--leaf)" opacity=".6"/>
+                  <path d="M30-130c-11-7-16-18-16-31 11 0 17 11 16 31Z" fill="var(--leaf)" opacity=".5"/>
+                  <g fill="var(--accent)" opacity=".85">
+                    <ellipse cx="30" cy="-162" rx="7" ry="12" transform="rotate(8 30 -162)"/>
+                    <ellipse cx="23" cy="-150" rx="5" ry="9" transform="rotate(-22 23 -150)"/>
+                    <ellipse cx="37" cy="-150" rx="5" ry="9" transform="rotate(24 37 -150)"/>
+                    <ellipse cx="27" cy="-176" rx="4" ry="8" transform="rotate(-10 27 -176)"/>
+                  </g>
+                </g>
+              </defs>
+
+              <g class="scene__sky">
+                <g class="scene__sun">
+                  <circle cx="806" cy="112" r="70" fill="var(--accent)" opacity=".1"/>
+                  <circle cx="806" cy="112" r="40" fill="var(--accent)" opacity=".9"/>
+                </g>
+                <g class="scene__moon">
+                  <path d="M818 66a46 46 0 1 0 34 74 54 54 0 0 1-34-74Z" fill="var(--accent)" opacity=".9"/>
+                </g>
+                <g class="scene__stars" fill="var(--ink-soft)">
+                  <circle cx="710" cy="76" r="1.6"/><circle cx="760" cy="150" r="1.2"/><circle cx="886" cy="190" r="1.4"/><circle cx="646" cy="120" r="1.1"/>
+                </g>
+                <g class="scene__cloud scene__cloud--1" fill="none" stroke="var(--rule-strong)" stroke-width="1.2">
+                  <path d="M96 132h96M108 142h66M126 152h34"/>
+                </g>
+                <g class="scene__cloud scene__cloud--2" fill="none" stroke="var(--rule-strong)" stroke-width="1.1">
+                  <path d="M420 92h80M432 102h54M448 112h26"/>
+                </g>
+              </g>
+
+              <g class="scene__birds" fill="none" stroke="var(--ink-soft)" stroke-width="1.4" stroke-linecap="round">
+                <path d="M646 196c6-6 12-6 18 0 6-6 12-6 18 0"/>
+                <path d="M704 166c5-5 10-5 15 0 5-5 10-5 15 0"/>
+                <path d="M594 230c4-4 8-4 12 0 4-4 8-4 12 0"/>
+              </g>
+
+              <path d="M0 330c150-46 282-30 432-12s288 4 568-30v232H0Z" fill="var(--leaf)" opacity=".07"/>
+              <path d="M0 358c180-30 322-14 502-4s300-16 498 4v162H0Z" fill="var(--leaf)" opacity=".1"/>
+
+              <g class="scene__rows" fill="none" stroke="var(--rule-strong)" stroke-width="1.2" opacity=".55">
+                <path d="M500 352Q340 430-40 520"/>
+                <path d="M500 352Q400 430 120 520"/>
+                <path d="M500 352Q440 430 260 520"/>
+                <path d="M500 352Q470 430 360 520"/>
+                <path d="M500 352Q485 430 450 520"/>
+                <path d="M500 352Q495 430 500 520"/>
+                <path d="M500 352Q505 430 540 520"/>
+                <path d="M500 352Q515 430 640 520"/>
+                <path d="M500 352Q560 430 760 520"/>
+                <path d="M500 352Q620 430 880 520"/>
+                <path d="M500 352Q660 430 1040 520"/>
+              </g>
+              <g class="scene__figure">
+                <ellipse cx="500" cy="492" rx="152" ry="22" fill="var(--leaf)" opacity=".14"/>
+                <path d="M414 466c18-26 56-32 86-14 30-18 68-12 86 14 12 18-18 30-60 30h-52c-42 0-72-12-60-30Z" fill="var(--scene-pants)"/>
+                <ellipse cx="424" cy="488" rx="26" ry="10" fill="var(--scene-shoe)"/>
+                <ellipse cx="576" cy="488" rx="26" ry="10" fill="var(--scene-shoe)"/>
+                <path d="M436 396c0-30 28-52 64-52s64 22 64 52l8 76c-38 12-106 12-144 0Z" fill="var(--scene-hoodie)"/>
+                <path d="M458 344c-16-60 8-98 42-98s58 38 42 98c-8 26-24 38-42 38s-34-12-42-38Z" fill="var(--scene-hoodie-dark)"/>
+                <circle cx="500" cy="312" r="32" fill="var(--scene-skin)"/>
+                <path d="M466 312c0-30 14-50 34-50s34 20 34 50c0 24-14 42-34 42s-34-18-34-42Z" fill="none" stroke="var(--scene-hoodie)" stroke-width="9"/>
+                <circle cx="490" cy="309" r="1.9" fill="var(--ink)" opacity=".7"/>
+                <circle cx="510" cy="309" r="1.9" fill="var(--ink)" opacity=".7"/>
+                <path d="M500 314v7" fill="none" stroke="var(--ink)" stroke-width="1.3" stroke-linecap="round" opacity=".45"/>
+                <path d="M493 330c5 4 9 4 14 0" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+                <path d="M486 348v18M514 348v18" fill="none" stroke="var(--scene-hoodie-dark)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="486" cy="368" r="2.4" fill="var(--accent)"/>
+                <circle cx="514" cy="368" r="2.4" fill="var(--accent)"/>
+                <path d="M446 392c-28 16-32 44-16 58" fill="none" stroke="var(--scene-hoodie)" stroke-width="24" stroke-linecap="round"/>
+                <path d="M554 392c28 16 32 44 16 58" fill="none" stroke="var(--scene-hoodie)" stroke-width="24" stroke-linecap="round"/>
+                <ellipse cx="500" cy="452" rx="146" ry="34" fill="var(--accent)" opacity=".06"/>
+                <path d="M431 398h138l12 52H419Z" fill="var(--ink)"/>
+                <path d="M440 404h120l9 40H431Z" fill="var(--scene-screen)"/>
+                <g class="scene__code" fill="none" stroke-linecap="round" stroke-width="2.6">
+                  <path d="M448 415h30" stroke="var(--accent)"/>
+                  <path d="M484 415h40" stroke="#A9CBB4" opacity=".8"/>
+                  <path d="M448 424h20" stroke="#A9CBB4" opacity=".6"/>
+                  <path d="M474 424h30" stroke="var(--accent)" opacity=".65"/>
+                  <path d="M448 433h50" stroke="#A9CBB4" opacity=".5"/>
+                  <path d="M504 433h18" stroke="var(--accent)" opacity=".8"/>
+                  <path class="scene__cursor" d="M530 438h9" stroke="var(--accent)" stroke-width="4"/>
+                </g>
+                <path d="M415 450h170l16 14H399Z" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="1.5"/>
+                <path d="M458 456h84" fill="none" stroke="var(--ink)" stroke-width="1" opacity=".22"/>
+                <circle cx="414" cy="454" r="9" fill="var(--scene-skin)"/>
+                <circle cx="586" cy="454" r="9" fill="var(--scene-skin)"/>
+              </g>
+
+              <g class="scene__chai">
+                <ellipse cx="648" cy="486" rx="30" ry="9" fill="var(--leaf)" opacity=".12"/>
+                <path d="M630 452h34l-4 28c-1 6-25 6-26 0Z" fill="var(--accent)"/>
+                <path d="M664 458c10 0 12 14 2 16" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                <ellipse cx="647" cy="452" rx="17" ry="5" fill="var(--accent-text)"/>
+                <g class="scene__steam" fill="none" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M641 442c-4-8 4-12 0-20"/>
+                  <path d="M653 442c4-8-4-12 0-20"/>
+                </g>
+              </g>
+
+              <g class="scene__sprout">
+                <path d="M382 484c-2-16 3-28 0-42" fill="none" stroke="var(--leaf)" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M382 452c-14-2-22-10-24-22 12-1 21 7 24 22Z" fill="var(--leaf)" opacity=".8"/>
+                <path d="M382 444c11-2 18-9 19-19-10-1-17 6-19 19Z" fill="var(--leaf)" opacity=".6"/>
+              </g>
+              <g class="scene__fireflies" fill="var(--accent)">
+                <g class="scene__firefly"><circle cx="250" cy="410" r="6" opacity=".16"/><circle cx="250" cy="410" r="2"/></g>
+                <g class="scene__firefly"><circle cx="330" cy="445" r="5" opacity=".16"/><circle cx="330" cy="445" r="1.8"/></g>
+                <g class="scene__firefly"><circle cx="700" cy="420" r="6" opacity=".16"/><circle cx="700" cy="420" r="2"/></g>
+                <g class="scene__firefly"><circle cx="760" cy="455" r="5" opacity=".16"/><circle cx="760" cy="455" r="1.7"/></g>
+                <g class="scene__firefly"><circle cx="860" cy="390" r="6" opacity=".16"/><circle cx="860" cy="390" r="2"/></g>
+                <g class="scene__firefly"><circle cx="410" cy="475" r="5" opacity=".16"/><circle cx="410" cy="475" r="1.7"/></g>
+              </g>
+
+              <g class="scene__crops">
+                <g transform="translate(32 520) scale(1)"><g class="crop crop--1"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(88 520) scale(.86)"><g class="crop crop--2"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(146 520) scale(1.16)"><g class="crop crop--3"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(204 520) scale(.92)"><g class="crop crop--4"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(262 520) scale(1.06)"><g class="crop crop--5"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(742 520) scale(.96)"><g class="crop crop--6"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(798 520) scale(1.18)"><g class="crop crop--7"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(852 520) scale(.86)"><g class="crop crop--8"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(906 520) scale(1.04)"><g class="crop crop--9"><use href="#scene-stalk"/></g></g>
+                <g transform="translate(962 520) scale(.92)"><g class="crop crop--10"><use href="#scene-stalk"/></g></g>
+              </g>
+
+              <g class="scene__drift" fill="var(--leaf)">
+                <path d="M300 360c8-6 16-4 20 4-8 6-16 4-20-4Z"/>
+                <path d="M650 330c8-6 16-4 20 4-8 6-16 4-20-4Z"/>
+                <path d="M540 400c6-5 13-3 16 3-6 5-13 3-16-3Z"/>
+              </g>
+
+
+            </svg>
+          </div>
+          <figcaption class="scene__bar">
+            <span>Hoodie, laptop, rows. Dusk brings the fireflies.</span>
+            <button class="scene__breeze" type="button" data-breeze>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 8h11a4 4 0 1 0-4-4M3 12h16a3 3 0 1 1-3 3M3 16h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span data-breeze-label>Send a breeze</span>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section" id="toolbox" data-row-mode="1.1" aria-labelledby="toolbox-title">
       <div class="wrap">
         <header class="section__head">
-          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>03 — Toolbox</p>
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>04 — Toolbox</p>
           <h2 id="toolbox-title">What I <em>reach for</em></h2>
           <p class="section__lede">Things I've shipped with. No bars, no percentages.</p>
         </header>
@@ -263,9 +434,9 @@
             </ul>
           </div>
           <div class="toolbox__group" data-reveal>
-            <h3>AI</h3>
+            <h3>AI &amp; NLP</h3>
             <ul class="taglist">
-              <li>LLM gateways</li><li>RAG</li><li>Evaluation</li><li>Cost controls</li>
+              <li>NLP</li><li>Dialogue systems</li><li>LLM gateways</li><li>RAG</li><li>Evaluation</li><li>Cost controls</li>
             </ul>
           </div>
           <div class="toolbox__group" data-reveal>
@@ -277,10 +448,89 @@
         </div>
       </div>
     </section>
+    <section class="section section--sound" id="sound" data-row-mode="2" aria-labelledby="sound-title">
+      <div class="wrap sound">
+        <div class="sound__text">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>05 — Sound</p>
+          <h2 id="sound-title">Strings and <em>staff lines</em></h2>
+          <p class="sound__lede">I play the sarod. I've also had some training in singing, though I'd call it a hobby rather than a skill — I can hold a tune, not much more.</p>
+          <p>Both are slow, pattern-minded things. A raga and a healthy codebase reward the same habit: listen, repeat, notice the small drift.</p>
+          <div class="sound__controls">
+            <button class="toggle" type="button" data-sound-toggle aria-pressed="false">
+              <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+              <span data-sound-label>Sound off</span>
+            </button>
+            <p class="sound__hint" data-sound-hint data-off="Sound is off. Turn it on, then pluck a string." data-on="Sound is on. Pluck a string, or focus one and press Enter.">Sound is off. Turn it on, then pluck a string.</p>
+          </div>
+        </div>
+
+        <figure class="sarod">
+          <svg class="sarod__art" viewBox="0 0 300 560" role="img" aria-labelledby="sarod-title sarod-desc">
+            <title id="sarod-title">A sarod</title>
+            <desc id="sarod-desc">A hand-drawn sarod with five strings. Each string can be plucked.</desc>
+
+            <path d="M150 342c66 0 110 46 110 104 0 60-48 94-110 94S40 506 40 446c0-58 44-104 110-104Z" fill="var(--wood)" stroke="var(--wood-dark)" stroke-width="2"/>
+            <path d="M150 358c56 0 94 38 94 88 0 50-42 80-94 80s-94-30-94-80c0-50 38-88 94-88Z" fill="var(--wood-light)" opacity=".2"/>
+            <path d="M150 540c-32 0-60-8-76-20 24 8 48 12 76 12s52-4 76-12c-16 12-44 20-76 20Z" fill="var(--wood-dark)" opacity=".55"/>
+
+            <path d="M132 92h36l-5 258h-26Z" fill="var(--wood)" stroke="var(--wood-dark)" stroke-width="1.6"/>
+            <path d="M138 96h24l-4 250h-16Z" fill="var(--wood-dark)" opacity=".5"/>
+            <path d="M126 34c0-12 11-20 24-20s24 8 24 20v60h-48Z" fill="var(--wood)" stroke="var(--wood-dark)" stroke-width="1.6"/>
+            <path d="M140 34h20v56h-20Z" fill="var(--wood-dark)" opacity=".4"/>
+
+            <g fill="var(--wood-light)" stroke="var(--wood-dark)" stroke-width="1">
+              <circle cx="118" cy="48" r="5.5"/>
+              <circle cx="120" cy="68" r="5.5"/>
+              <circle cx="182" cy="48" r="5.5"/>
+              <circle cx="180" cy="68" r="5.5"/>
+            </g>
+
+            <path d="M128 96h44" fill="none" stroke="var(--string)" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+            <path d="M124 456h52l5 13h-62Z" fill="var(--wood-dark)"/>
+            <path d="M130 458h40" fill="none" stroke="var(--string)" stroke-width="2" opacity=".8"/>
+            <path d="M139 518h22l-4 11h-14Z" fill="var(--wood-dark)"/>
+
+            <g fill="none" stroke="var(--wood-light)" opacity=".7">
+              <circle cx="150" cy="408" r="21"/>
+              <circle cx="150" cy="408" r="13"/>
+              <circle cx="150" cy="408" r="6" fill="var(--wood-light)" stroke="none"/>
+            </g>
+            <g class="sarod__strings">
+              <g class="string" data-string-note="130.81" tabindex="0" role="button" aria-label="Pluck the first string, C3" focusable="true">
+                <path class="string__hit" d="M136 102 126 458 150 526" fill="none" stroke="rgba(0,0,0,0)" stroke-width="14" pointer-events="stroke"/>
+                <path class="string__line" d="M136 102 126 458 150 526" fill="none" stroke="var(--string)" stroke-width="1.4" opacity=".8"/>
+              </g>
+              <g class="string" data-string-note="196.00" tabindex="0" role="button" aria-label="Pluck the second string, G3" focusable="true">
+                <path class="string__hit" d="M143 102 138 458 150 526" fill="none" stroke="rgba(0,0,0,0)" stroke-width="14" pointer-events="stroke"/>
+                <path class="string__line" d="M143 102 138 458 150 526" fill="none" stroke="var(--string)" stroke-width="1.4" opacity=".8"/>
+              </g>
+              <g class="string" data-string-note="261.63" tabindex="0" role="button" aria-label="Pluck the third string, C4" focusable="true">
+                <path class="string__hit" d="M150 102 150 458 150 526" fill="none" stroke="rgba(0,0,0,0)" stroke-width="14" pointer-events="stroke"/>
+                <path class="string__line" d="M150 102 150 458 150 526" fill="none" stroke="var(--string)" stroke-width="1.4" opacity=".8"/>
+              </g>
+              <g class="string" data-string-note="293.66" tabindex="0" role="button" aria-label="Pluck the fourth string, D4" focusable="true">
+                <path class="string__hit" d="M157 102 162 458 150 526" fill="none" stroke="rgba(0,0,0,0)" stroke-width="14" pointer-events="stroke"/>
+                <path class="string__line" d="M157 102 162 458 150 526" fill="none" stroke="var(--string)" stroke-width="1.4" opacity=".8"/>
+              </g>
+              <g class="string" data-string-note="392.00" tabindex="0" role="button" aria-label="Pluck the fifth string, G4" focusable="true">
+                <path class="string__hit" d="M164 102 174 458 150 526" fill="none" stroke="rgba(0,0,0,0)" stroke-width="14" pointer-events="stroke"/>
+                <path class="string__line" d="M164 102 174 458 150 526" fill="none" stroke="var(--string)" stroke-width="1.4" opacity=".8"/>
+              </g>
+            </g>
+
+          </svg>
+          <figcaption>
+            <p>Pluck a string. A sarod, roughly; five strings, tuned to C for the web.</p>
+            <p class="sarod__tuning" aria-label="String notes: C, G, C, D, G">C · G · C · D · G</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section" id="play" data-row-mode="2" aria-labelledby="play-title">
       <div class="wrap">
         <header class="section__head">
-          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>04 — Play</p>
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>06 — Play</p>
           <h2 id="play-title">Play <em>corner</em></h2>
           <p class="section__lede">Small, optional things. Sound stays off until you ask for it.</p>
         </header>
@@ -304,7 +554,7 @@
               <button class="key" type="button" data-note="440.00" data-hotkey="h" aria-label="Play A, key H"><span class="key__letter">H</span><span class="key__note">A</span></button>
               <button class="key" type="button" data-note="493.88" data-hotkey="j" aria-label="Play B, key J"><span class="key__letter">J</span><span class="key__note">B</span></button>
             </div>
-            <p class="card__hint" data-audio-hint>Sound is off. Turn it on when you want to hear it.</p>
+            <p class="card__hint" data-audio-hint data-off="Sound is off. Turn it on when you want to hear it." data-on="Sound is on. Press A S D F G H J, or tap the keys.">Sound is off. Turn it on when you want to hear it.</p>
             <svg class="wave" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true" focusable="false">
               <defs>
                 <path id="wave-row" d="M0 32C40 32 40 12 80 12S120 52 160 52 240 12 280 12 360 32 400 32"/>
@@ -375,7 +625,7 @@
     <section class="section section--contact" id="contact" data-row-mode="0.2" aria-labelledby="contact-title">
       <div class="wrap contact">
         <div class="contact__intro">
-          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>05 — Contact</p>
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>07 — Contact</p>
           <h2 id="contact-title">Say <em>hello</em>.</h2>
           <p class="contact__lede">Email is best. I read all of it. LinkedIn works too.</p>
         </div>

@@ -71,7 +71,7 @@ $graphics.DrawString('Hrishikesh Dehankar', $titleFont, $inkBrush, 74, 294)
 $graphics.DrawString('Software developer. Farmer. Music lover.', $identityFont, $softBrush, 78, 414)
 $rulePen = New-Pen '#C4552D' 255 3
 $graphics.DrawLine($rulePen, 78, 486, 196, 486)
-$graphics.DrawString('OPTIMUS-33.GITHUB.IO', $smallFont, $softBrush, 78, 516)
+$graphics.DrawString('OPTIMUS-33.GITHUB.IO/MYSITEC', $smallFont, $softBrush, 78, 516)
 
 foreach ($base in @(566, 594, 622)) {
   $points = @()

@@ -8,15 +8,28 @@ There is no framework, no build step and no external JavaScript. Fonts come from
 
 ```
 index.html            the whole page
-CSS/styles.css        palette (day + dusk), type, layout, motion
-js/main.js            theme, nav, reveal, Web Audio keyboard, bonda, canvas field
+css/styles.css        palette (day + dusk), type, layout, field scene, motion
+js/main.js            theme, nav, reveal, canvas field, Web Audio, bonda, breeze
 assets/favicon.svg    HAD monogram favicon
 assets/og.svg         source artwork for the social card
 assets/og.png         1200 × 630 social card (used by Open Graph tags)
 tools/make-og.ps1     optional Windows script that regenerates og.png
+tools/check-html.py   optional structural check for index.html
+tools/validate.mjs    optional Edge/CDP check: interactions + screenshots
 ```
 
-Everything else is inline SVG: the HAD mark, the plant, the sound wave, the day/dusk scene and the plate of aloo bonda.
+Everything else is inline SVG: the HAD mark, the plant, the field scene with the hoodie and laptop, the sarod, the sound wave, the day/dusk illustration and the plate of aloo bonda.
+
+## The page, in order
+
+- **Hero** — name, the three identities, and the living line field.
+- **01 About** — four plain sentences, with the small plant drawing.
+- **02 Work** — a growing timeline; LLM gateway, AI catalog, NLP systems, Django services.
+- **03 Field** — the wide hoodie-and-laptop scene, a breeze button, fireflies at dusk.
+- **04 Toolbox** — grouped tools, now including NLP and dialogue systems.
+- **05 Sound** — sarod and singing, with five strings you can actually pluck.
+- **06 Play** — the opt-in keyboard, day/dusk switch and aloo-bonda plate.
+- **07 Contact** — email, LinkedIn, GitHub. No phone number anywhere.
 
 ## Run it locally
 
@@ -57,11 +70,14 @@ The phone number is intentionally not published anywhere. Contact is email, Link
 
 ## Notes on the build
 
-- **Motion.** The line field is drawn on a `<canvas>` fixed behind the page. Scroll position cross-fades the three row states: furrows at the Hero/About, stepped code lines through Work, a five-line staff with notes at Play. The cursor or a touch bends the nearest lines; scrolling adds a little wind. Under `prefers-reduced-motion: reduce` it renders one still frame and stops, and every CSS transition/animation is reduced to nothing.
-- **Sound.** The keyboard is muted by default. Turning it on creates an `AudioContext` only after that click, so no autoplay prompts. Notes are synthesised with two oscillators and a soft low-pass, no audio files.
-- **Accessibility.** Semantic landmarks, skip link, visible `:focus-visible` styles, native `<details>` for the work entries, `aria-pressed` toggles, live regions for the bonda messages, alt/title text for illustrations, and AA-contrast text colours (terracotta is used decoratively or in a darker text-safe variant).
-- **Weight.** The page is well under 200 KB excluding fonts; the largest file is the 47 KB social image, which isn't downloaded by visitors to the page.
+- **Motion.** The line field is drawn on a `<canvas>` fixed behind the page. Scroll position cross-fades the three row states: furrows at Hero/About, stepped code lines through Work, furrows again at Field, code at Toolbox, then a five-line staff through Sound/Play. The cursor or a touch bends the nearest lines; scrolling adds a little wind. Staff noteheads are drawn only above 1280 px and only in the outer margins, so they never sit behind copy. Under `prefers-reduced-motion: reduce` the canvas renders one still frame and stops, and every CSS transition/animation is reduced to nothing.
+- **Field scene.** Crops sway on staggered loops, the chai steams, the laptop cursor blinks and the sun becomes a moon at dusk. Dusk also brings stars and fireflies. *Send a breeze* speeds up the crop sway and sends a few leaves across for a few seconds. The button is hidden under reduced motion. The scene is drawn entirely in SVG and responds to the day/dusk toggle.
+- **Sound.** Everything is muted by default. Turning sound on in either Sound or Play creates an `AudioContext` only after that click, so there is no autoplay prompt, and both switches stay in sync. The keyboard uses two oscillators and a soft low-pass; the sarod strings use a short plucked envelope. No audio files. The SVG strings are focusable (`role="button"`, Enter or Space) as well as clickable.
+- **Work claims.** Client names are deliberately omitted. The Fortune 500 scale and the top-five detail live inside the expanded Fractal entry, not in the summary, so the page stays understated.
+- **Accessibility.** Semantic landmarks, skip link, visible `:focus-visible` styles, native `<details>` for work entries, `aria-pressed` toggles, live regions for the bonda messages, alt/title text for illustrations, and AA-contrast text colours (terracotta is used decoratively or in a darker text-safe variant). The breeze button is keyboard reachable and hidden when motion is reduced.
+- **Weight.** About 155 KB for the whole site including the 46 KB social image (which visitors don't download). Fonts are excluded and load from Google Fonts.
 - **Fonts.** Fraunces for headings, Inter for body and detail. Two families, no more.
+- **Checks.** `python tools/check-html.py` verifies tag balance and unique ids. `node tools/validate.mjs` starts a local server, drives headless Edge over CDP, tests theme/sound/strings/breeze/bonda/nav, and writes screenshots plus `report.json` to `.preview/` (git-ignored). Both are dev-only; the site needs neither.
 
 ## License
 
